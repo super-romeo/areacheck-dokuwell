@@ -15,146 +15,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <meta name="description" content="For UK home buyers: an investigator observes the street and neighbours by day and night for a week and reports before you exchange.">
 <link rel="icon" href="favicon.svg">
 <link rel="stylesheet" href="style.css">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
-<style>
-/* Variant «Impeccable bolder»: the base system (accent blue, Inter, pills) turned up to full strength; light grounds only. */
-:root{
-  --bg:#fcfcfc;--ink:#05080b;--muted:#5c646f;--line:#dfe1e5;--card:#ffffff;--alt:#f7f8f9;
-  --accent:#006acf;--accent-soft:#d6efff;--accent-num:#b1ddff;--navy:#f7f8f9;--focus:#0086dd;
-  --on-navy:#5c646f;--navy-line:#dfe1e5;
-  --radius:12px;--radius-lg:21.6px;
-  --ease:cubic-bezier(.16,1,.3,1);
-}
-html{scroll-behavior:smooth;scroll-padding-top:80px}
-@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
-body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;font-size:1rem;line-height:1.55;font-feature-settings:"cv11","ss01";overflow-x:hidden}
-::selection{background:var(--accent);color:#fff}
-:focus-visible{outline:2px solid var(--focus);outline-offset:3px;border-radius:6px}
-a{text-underline-offset:.2em;text-decoration-thickness:1px}
-.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
-h1,h2,h3{text-wrap:balance}
-p{text-wrap:pretty}
-
-/* header */
-header{background:rgba(252,252,252,.94);border-bottom:1px solid var(--navy-line);position:sticky;top:0;z-index:20;backdrop-filter:blur(8px)}
-header .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:64px;flex-wrap:wrap}
-.logo{font-size:1.0625rem;font-weight:800;letter-spacing:-.02em}
-.logo a{color:var(--ink);text-decoration:none;display:inline-flex;align-items:center;gap:10px}
-.logo svg{flex:none}
-nav.top a{color:var(--on-navy);text-decoration:none;margin-left:24px;font-size:.9375rem;line-height:1.4;font-weight:500}
-nav.top a:hover{color:var(--ink)}
-
-/* hero: the one decisive move — the night street */
-.hero{background:var(--navy);color:var(--ink);padding:96px 0 88px;position:relative;isolation:isolate}
-.hero .wrap{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:64px;align-items:end}
-.hero h1{font-size:clamp(2.6rem,1.2rem + 5.2vw,5.25rem);line-height:.98;font-weight:800;letter-spacing:-.04em;margin:0 0 28px;color:var(--ink)}
-.hero h1 .night{color:var(--accent)}
-.hero h1 .tail{display:block;margin-top:18px;font-size:clamp(1.125rem,.9rem + .8vw,1.5rem);line-height:1.3;font-weight:600;letter-spacing:-.01em;color:var(--on-navy)}
-.hero .sub{font-size:1.1875rem;line-height:1.6;color:var(--on-navy);margin:0 0 36px;max-width:36em}
-.cta-row{display:flex;flex-wrap:wrap;align-items:center;gap:12px 24px}
-a.cta{display:inline-block;text-decoration:none;border-radius:999px;background:var(--accent);color:#fff;font-size:1.0625rem;line-height:1.5;font-weight:700;padding:18px 36px;margin:0;box-shadow:0 10px 24px -12px rgba(5,8,11,.6);transition:transform .35s var(--ease),box-shadow .35s var(--ease),background-color .2s}
-a.cta:hover{transform:translateY(-2px);box-shadow:0 16px 28px -14px rgba(5,8,11,.7);background:var(--accent);opacity:1}
-a.cta:active{transform:translateY(0)}
-.hero .cta-note{color:var(--on-navy);font-size:.875rem;line-height:1.45;margin:0;max-width:22em}
-
-/* the observation week (drawn, illustrative) */
-.week{margin:0;border:1px solid var(--navy-line);border-radius:var(--radius-lg);padding:24px 24px 18px;background:var(--card)}
-.week figcaption{font-size:.875rem;line-height:1.4;font-weight:600;color:var(--ink);margin:0 0 16px;display:flex;justify-content:space-between;gap:12px}
-.week figcaption span{font-weight:500;color:var(--on-navy)}
-.row{display:grid;grid-template-columns:2.6em 1fr;align-items:center;gap:12px;margin:0 0 9px}
-.row b{font-size:.8125rem;line-height:1;font-weight:600;color:var(--on-navy)}
-.track{position:relative;height:18px;border-radius:999px;background:linear-gradient(90deg,#f7f8f9 0%,#d6efff 40%,#b1ddff 60%,#006acf 100%);overflow:hidden}
-.track i{position:absolute;top:3px;bottom:3px;border-radius:999px;background:var(--card);border:2px solid var(--accent)}
-.track i.n{background:var(--accent-num);border-color:var(--card)}
-.scale{display:grid;grid-template-columns:2.6em 1fr;gap:12px;margin-top:12px}
-.scale ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);font-size:.75rem;line-height:1.3;color:var(--on-navy);font-weight:500}
-.scale li:nth-child(n+3){text-align:right}
-
-/* sections */
-main section{padding:104px 0}
-h2{font-size:clamp(2rem,1.3rem + 2.6vw,3.5rem);line-height:1.02;font-weight:800;letter-spacing:-.035em;margin:0 0 40px;color:var(--ink)}
-h3{font-size:1.25rem;line-height:1.35;font-weight:700;letter-spacing:-.015em;margin:0 0 8px;color:var(--ink)}
-
-/* what you get: a ledger, not a card grid */
-.ledger{list-style:none;margin:0;padding:0;border-top:2px solid var(--ink)}
-.ledger li{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.3fr) auto;gap:24px 40px;align-items:baseline;padding:30px 0;border-bottom:1px solid var(--line)}
-.ledger b{font-size:clamp(1.375rem,1.1rem + 1vw,2rem);line-height:1.15;font-weight:800;letter-spacing:-.03em}
-.ledger span{font-size:1.0625rem;line-height:1.55;color:var(--muted)}
-.btn{display:inline-block;text-decoration:none;border-radius:999px;padding:10px 20px;font-size:.9375rem;line-height:1.4;font-weight:600;color:var(--ink);background:var(--card);border:1px solid var(--line);margin:0;white-space:nowrap;transition:border-color .2s,background-color .2s,color .2s}
-.btn:hover{border-color:var(--accent);color:var(--accent);background:var(--card)}
-
-/* example: an extract of the report */
-#example{background:var(--alt)}
-.example{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:56px;align-items:start}
-.extract{margin:0;background:var(--card);border:1px solid var(--line);border-radius:var(--radius-lg);box-shadow:0 18px 40px -24px rgba(0,0,0,.18);overflow:hidden}
-.extract-head{background:var(--navy);color:var(--ink);border-bottom:1px solid var(--line);padding:16px 28px;font-size:.875rem;line-height:1.4;font-weight:600;display:flex;justify-content:space-between;gap:12px}
-.extract-head span{color:var(--on-navy);font-weight:500}
-.extract p.fine{margin:0;padding:28px;font-size:1.125rem;line-height:1.65;color:var(--ink)}
-.example-side p{font-size:1.0625rem;line-height:1.6;color:var(--muted);margin:0 0 32px;max-width:30em}
-
-/* how it works: reading mode */
-#opis .cols{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2fr);gap:56px}
-#opis .body{max-width:68ch}
-#opis .body p{font-size:1.0625rem;line-height:1.7;color:var(--ink);margin:0 0 1.15em}
-#opis .body p:first-child{font-size:1.375rem;line-height:1.5;color:var(--ink);font-weight:500;letter-spacing:-.01em}
-#opis h2{position:sticky;top:96px}
-
-/* questions */
-#faq{border-top:1px solid var(--line)}
-.qa{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.4fr);gap:0 56px;border-top:2px solid var(--ink)}
-.qa h3,.qa p{padding:24px 0;border-bottom:1px solid var(--line);margin:0}
-.qa p{font-size:1.0625rem;line-height:1.6;color:var(--muted)}
-
-/* start: bookend on the alternate ground */
-#start{background:var(--navy);color:var(--ink)}
-#start h2{color:var(--ink);max-width:14em}
-.startbox{display:flex;flex-wrap:wrap;align-items:flex-end;gap:16px 20px}
-.startbox p{margin:0}
-.startbox label{display:block;font-size:.9375rem;line-height:1.4;font-weight:600;color:var(--on-navy)}
-select{display:block;margin-top:10px;font:inherit;font-size:1.0625rem;line-height:1.4;color:var(--ink);background:var(--card);border:1px solid var(--line);border-radius:999px;padding:16px 24px;min-width:300px;max-width:100%}
-select:focus{outline:3px solid var(--focus);outline-offset:2px}
-
-/* footer */
-footer{background:var(--alt);color:var(--ink);border-top:1px solid var(--line);padding:32px 0;font-size:.875rem;line-height:1.45}
-footer a{color:var(--ink)}
-footer p{margin:0}
-footer .muted{color:var(--muted);margin:10px 0 0;max-width:70ch}
-
-@media (max-width:900px){
-  .hero .wrap,.example,#opis .cols,.qa{grid-template-columns:minmax(0,1fr)}
-  .hero .wrap{gap:48px}
-  #opis .cols{gap:8px}
-  #opis h2{position:static}
-  .qa h3{border-bottom:0;padding-bottom:6px}
-  .qa p{padding-top:0}
-  .example{display:flex;flex-direction:column;gap:0}
-  .example-side{display:contents}
-  .example-side p{margin-bottom:28px}
-  .extract{margin-bottom:32px}
-  .example-side a.cta{order:3;align-self:flex-start}
-}
-@media (max-width:760px){
-  nav.top{display:none}
-  .hero{padding:56px 0 56px}
-  main section{padding:72px 0}
-  h2{margin-bottom:28px}
-  .ledger li{grid-template-columns:minmax(0,1fr);gap:10px;padding:24px 0}
-  .ledger .btn{justify-self:start;margin-top:6px}
-  a.cta{display:block;text-align:center}
-  .cta-row{display:block}
-  .hero .cta-note{margin-top:14px}
-  select{min-width:0;width:100%}
-  .startbox{display:block}
-  .startbox a.cta{margin-top:16px}
-  .extract p.fine{padding:22px;font-size:1.0625rem}
-}
-@media (max-width:480px){
-  .wrap{padding:0 16px}
-  .week{padding:18px 16px 14px}
-}
-</style>
 <script src="smoke.js" defer></script>
 <!-- faq-jsonld:start -->
 <script type="application/ld+json">
@@ -214,58 +74,36 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 
 <header><div class="wrap">
-  <div class="logo"><a href="index.html" data-ev="click_logo_home"><svg width="26" height="26" viewBox="0 0 26 26" aria-hidden="true"><rect width="26" height="26" rx="7" fill="#006acf"/><path d="M13 6.5a6.5 6.5 0 1 0 0 13a5 5 0 0 1 0-13z" fill="#b1ddff"/><circle cx="13" cy="13" r="2.4" fill="#fff"/></svg>AreaWatch</a></div>
+  <div class="logo"><a href="index.html" data-ev="click_logo_home">AreaWatch</a></div>
   <nav class="top"><a href="#what" data-ev="click_nav_what">What you get</a><a href="price.html" data-ev="click_nav_price">Price</a><a href="#example" data-ev="click_nav_example">Example</a><a href="#start" data-ev="click_nav_start">Start</a></nav>
 </div></header>
 
-<main>
-  <div class="hero"><div class="wrap">
-    <div>
-      <h1>See the street by day <span class="night">and by night</span> before you buy<span class="tail">A neighbourhood investigation report</span></h1>
-      <p class="sub">For home buyers in the UK: before you exchange contracts, an investigator spends seven to ten days observing the street and the neighbouring houses at different times of day and night, and you receive a written report.</p>
-      <div class="cta-row">
-        <a class="cta" href="price.html" data-ev="cta_click">I need this</a>
-        <p class="cta-note">Service in preparation · No payment is accepted on this page</p>
-      </div>
-    </div>
-    <figure class="week" aria-label="Illustration: observation sessions spread across a week, from morning to night">
-      <figcaption>A week on the street <span>illustrative</span></figcaption>
-      <div class="row"><b>Mon</b><div class="track"><i style="left:6%;width:9%"></i><i class="n" style="left:62%;width:8%"></i></div></div>
-      <div class="row"><b>Tue</b><div class="track"><i style="left:30%;width:10%"></i></div></div>
-      <div class="row"><b>Wed</b><div class="track"><i style="left:2%;width:7%"></i><i class="n" style="left:79%;width:9%"></i></div></div>
-      <div class="row"><b>Thu</b><div class="track"><i class="n" style="left:56%;width:11%"></i></div></div>
-      <div class="row"><b>Fri</b><div class="track"><i style="left:12%;width:6%"></i><i class="n" style="left:66%;width:22%"></i></div></div>
-      <div class="row"><b>Sat</b><div class="track"><i style="left:20%;width:14%"></i><i class="n" style="left:72%;width:10%"></i></div></div>
-      <div class="row"><b>Sun</b><div class="track"><i style="left:34%;width:12%"></i></div></div>
-      <div class="scale"><span></span><ul><li>Morning</li><li>Afternoon</li><li>Evening</li><li>Night</li></ul></div>
-    </figure>
-  </div></div>
+<div class="wrap">
+  <div class="hero">
+    <h1>See the street by day and by night before you buy — a neighbourhood investigation report</h1>
+    <p class="sub">For home buyers in the UK: before you exchange contracts, an investigator spends seven to ten days observing the street and the neighbouring houses at different times of day and night, and you receive a written report.</p>
+    <a class="cta" href="price.html" data-ev="cta_click">I need this</a>
+    <p class="cta-note">Service in preparation · No payment is accepted on this page</p>
+  </div>
 
-  <section id="what" data-view="features_view"><div class="wrap">
+  <section id="what" data-view="features_view">
     <h2>What you get</h2>
-    <ul class="ledger">
-      <li><b>Seven to ten days</b><span>Observation on weekdays and at the weekend, in the morning, evening and at night.</span><a class="btn" href="price.html" data-ev="feature_days">I need this</a></li>
-      <li><b>Street and neighbours</b><span>Noise, parking, traffic, gatherings and anything unusual around the property.</span><a class="btn" href="price.html" data-ev="feature_street">I need this</a></li>
-      <li><b>Local enquiries</b><span>Checks of publicly available information about the area.</span><a class="btn" href="price.html" data-ev="feature_records">I need this</a></li>
-      <li><b>Written report</b><span>Findings in a written report, with dates and times.</span><a class="btn" href="price.html" data-ev="feature_report">I need this</a></li>
-    </ul>
-  </div></section>
-
-  <section id="example" data-view="example_view"><div class="wrap example">
-    <div class="example-side">
-      <h2>Example (fictional data)</h2>
-      <p>What a finished report tells a buyer, in one paragraph.</p>
-      <a class="cta" href="price.html" data-ev="click_cta_after_example">Choose your package</a>
+    <div class="grid">
+      <div class="card"><b>Seven to ten days</b><span>Observation on weekdays and at the weekend, in the morning, evening and at night.</span><br><a class="btn" href="price.html" data-ev="feature_days">I need this</a></div>
+      <div class="card"><b>Street and neighbours</b><span>Noise, parking, traffic, gatherings and anything unusual around the property.</span><br><a class="btn" href="price.html" data-ev="feature_street">I need this</a></div>
+      <div class="card"><b>Local enquiries</b><span>Checks of publicly available information about the area.</span><br><a class="btn" href="price.html" data-ev="feature_records">I need this</a></div>
+      <div class="card"><b>Written report</b><span>Findings in a written report, with dates and times.</span><br><a class="btn" href="price.html" data-ev="feature_report">I need this</a></div>
     </div>
-    <figure class="extract">
-      <div class="extract-head">Report summary <span>fictional</span></div>
-      <p class="fine">A family buying a semi-detached house in a quiet-looking street. Observation over nine days, including a Friday night and a Sunday afternoon. The report notes heavy evening parking on the street, a busy workshop two doors down on Saturdays and no late-night noise. The family goes ahead with a clear picture.</p>
-    </figure>
-  </div></section>
+  </section>
+
+  <section id="example" data-view="example_view">
+    <h2>Example (fictional data)</h2>
+    <p class="fine">A family buying a semi-detached house in a quiet-looking street. Observation over nine days, including a Friday night and a Sunday afternoon. The report notes heavy evening parking on the street, a busy workshop two doors down on Saturdays and no late-night noise. The family goes ahead with a clear picture.</p>
+    <a class="cta" href="price.html" data-ev="click_cta_after_example">Choose your package</a>
+  </section>
 <!-- seo-tekst:start -->
-  <section id="opis"><div class="wrap cols">
+  <section id="opis">
     <h2>How it works</h2>
-    <div class="body">
     <p>A viewing shows a house at one moment, usually on a weekday afternoon. What the street is like on a Friday night, whether the neighbours' parties go on until three in the morning, whether the quiet road becomes a shortcut at rush hour — none of that is visible during a twenty-minute visit. AreaWatch sends an investigator to watch the area for you before you commit.</p>
     <p>You give us the address and tell us what worries you: noise, parking, a particular neighbour, anti-social behaviour, traffic. The investigator plans observation over seven to ten days, at different times — mornings, evenings, nights, weekdays and the weekend — so that the report covers the life of the street, not a single moment.</p>
     <p>During the observation the investigator notes what happens around the property: noise and its sources, parking and traffic, groups gathering, deliveries, anything unusual at the neighbouring houses. Observation is done discreetly from public places, without entering private property and without contacting the neighbours.</p>
@@ -277,11 +115,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <p>The investigator keeps a log for every session, with the date, the start and end time and what was observed. If something of interest happens repeatedly — a car parked across a driveway every evening, loud music at weekends — the report says how often it happened during the observation period, so you can judge how typical it is.</p>
     <p>You can order a second, shorter check after moving in, for example if a problem appears that you want documented. Prices for follow-up checks are agreed in advance.</p>
     <p>AreaWatch does not replace a survey, local authority searches or legal advice from your conveyancer. All observation is carried out lawfully and from public places.</p>
-    </div>
-  </div></section>
-  <section id="faq"><div class="wrap">
+  </section>
+  <section id="faq">
     <h2>Questions</h2>
-    <div class="qa">
     <h3>Who is it for?</h3>
     <p>Private home buyers in the UK who want to know the area before exchanging contracts.</p>
     <h3>How long does the observation last?</h3>
@@ -292,17 +128,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <p>No. It adds an observation report to the usual checks.</p>
     <h3>Can I use it already?</h3>
     <p>Not yet. The service is in preparation, and we are checking whether buyers need it.</p>
-    </div>
-  </div></section>
+  </section>
 <!-- seo-tekst:end -->
-  <section id="start" data-view="start_view"><div class="wrap">
+  <section id="start" data-view="start_view">
     <h2>Tell us about the property</h2>
-    <div class="startbox">
-      <p><label>Your main concern<select data-ev-focus="form_start"><option value="">— please choose —</option><option>Noise</option><option>Parking and traffic</option><option>Neighbours</option><option>Anti-social behaviour</option><option>General picture</option></select></label></p>
-      <a class="cta" href="price.html" data-ev="form_submit_click">Continue</a>
-    </div>
-  </div></section>
-</main>
+    <p><label>Your main concern<br><select data-ev-focus="form_start" style="margin-top:6px;padding:8px;font-size:16px"><option value="">— please choose —</option><option>Noise</option><option>Parking and traffic</option><option>Neighbours</option><option>Anti-social behaviour</option><option>General picture</option></select></label></p>
+    <a class="cta" href="price.html" data-ev="form_submit_click">Continue</a>
+  </section>
+</div>
 
 <footer><div class="wrap">
   <p><a href="privacy.html" data-ev="click_legal_privacy">Privacy</a></p>
